@@ -27,6 +27,8 @@ public:
     Fixed operator--(int);
     Fixed &operator++(void);
     Fixed &operator--(void);
+    Fixed operator+(Fixed const &src)   const;
+    Fixed operator-(Fixed const &src)   const;
     
     Fixed operator/(Fixed const &src)   const;
     Fixed operator*(Fixed const &src)   const;

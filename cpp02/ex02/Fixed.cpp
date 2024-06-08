@@ -129,6 +129,17 @@ Fixed Fixed::operator*(Fixed const &src)   const
     return Fixed(this->toFloat() * src.toFloat());
 }
 
+Fixed Fixed::operator+(Fixed const &src)   const
+{
+    std::cout << "operator + called" << std::endl;
+    return Fixed(this->toFloat() + src.toFloat());
+}
+Fixed Fixed::operator-(Fixed const &src)   const
+{
+    std::cout << "operator - called" << std::endl;
+    return Fixed(this->toFloat() - src.toFloat());
+}
+
 bool Fixed::operator!=(Fixed const &src)  const
 {
     std::cout << "operator != called" << std::endl;
