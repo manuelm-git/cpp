@@ -62,28 +62,28 @@ std::ostream &operator<<(std::ostream &output, Fixed const &value)
     output << value.toFloat();
     return output;
 }
-Fixed Fixed::operator<=(Fixed const &src)  const
+bool Fixed::operator<=(Fixed const &src)  const
 {
     std::cout << "operator <= called" << std::endl;
     if(this->toFloat() <= src.toFloat())
         return 1;
     return 0;
 }
-Fixed Fixed::operator>=(Fixed const &src)  const
+bool Fixed::operator>=(Fixed const &src)  const
 {
     std::cout << "operator >= called" << std::endl;
     if(this->toFloat() >= src.toFloat())
         return 1;
     return 0;
 }
-Fixed Fixed::operator<(Fixed const &src)   const
+bool Fixed::operator<(Fixed const &src)   const
 {
     std::cout << "operator < called" << std::endl;
     if(this->toFloat() < src.toFloat())
         return 1;
     return 0;
 }
-Fixed Fixed::operator>(Fixed const &src)   const
+bool Fixed::operator>(Fixed const &src)   const
 {
     std::cout << "operator > called" << std::endl;
     if(this->toFloat() > src.toFloat())
@@ -129,14 +129,14 @@ Fixed Fixed::operator*(Fixed const &src)   const
     return Fixed(this->toFloat() * src.toFloat());
 }
 
-Fixed Fixed::operator!=(Fixed const &src)  const
+bool Fixed::operator!=(Fixed const &src)  const
 {
     std::cout << "operator != called" << std::endl;
     if(this->toFloat() != src.toFloat())
         return 1;
     return 0;
 }
-Fixed Fixed::operator==(Fixed const &src)  const
+bool Fixed::operator==(Fixed const &src)  const
 {
     std::cout << "operator == called" << std::endl;
     if(this->toFloat() == src.toFloat())

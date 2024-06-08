@@ -18,10 +18,10 @@ public:
     void setRawBits(int const raw);
     float toFloat(void) const;
     int toInt(void) const;
-    Fixed operator<=(Fixed const &src)  const;
-    Fixed operator>=(Fixed const &src)  const;
-    Fixed operator<(Fixed const &src)   const;
-    Fixed operator>(Fixed const &src)   const;
+    bool operator<=(Fixed const &src)  const;
+    bool operator>=(Fixed const &src)  const;
+    bool operator<(Fixed const &src)   const;
+    bool operator>(Fixed const &src)   const;
 
     Fixed operator++(int);
     Fixed operator--(int);
@@ -31,8 +31,8 @@ public:
     Fixed operator/(Fixed const &src)   const;
     Fixed operator*(Fixed const &src)   const;
     
-    Fixed operator!=(Fixed const &src)  const;
-    Fixed operator==(Fixed const &src)  const;
+    bool operator!=(Fixed const &src)  const;
+    bool operator==(Fixed const &src)  const;
 
     static Fixed &min(Fixed &a, Fixed &b);
     static Fixed &max(Fixed &a, Fixed &b);
