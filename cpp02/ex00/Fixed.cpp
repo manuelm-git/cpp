@@ -3,7 +3,7 @@
 Fixed::Fixed(/* args */)
 {
     std::cout << "Default constructor called" << std::endl;
-    this->value = 20;
+    this->value = 0;
 }
 
 Fixed::~Fixed()

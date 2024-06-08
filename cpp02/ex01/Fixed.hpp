@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <cmath>
 class Fixed
 {
 private:
@@ -9,7 +10,7 @@ private:
 public:
     Fixed();
     Fixed(const int value);
-    Fixed(const Fixed &value);
+    Fixed(const float value);
     ~Fixed();
     Fixed(Fixed const &src);
     Fixed &operator=(Fixed const &src);
@@ -19,7 +20,7 @@ public:
     int toInt(void) const;
 };
 
-
+std::ostream &operator<<(std::ostream &output, Fixed const &value);
 
 
 
