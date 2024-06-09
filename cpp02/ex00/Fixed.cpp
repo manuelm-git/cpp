@@ -21,7 +21,8 @@ Fixed &Fixed::operator=(Fixed const &src)
 {
     //copy values between already initialized objects
     std::cout << "Copy assignment operator called" << std::endl;
-    this->value = src.getRawBits();
+    if (this != &src)
+        this->value = src.getRawBits();
     return (*this);
 }
 int Fixed::getRawBits(void) const
