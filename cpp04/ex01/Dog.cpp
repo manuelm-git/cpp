@@ -27,10 +27,11 @@ Dog::~Dog()
 Dog &Dog::operator=(const Dog &dog)
 {
     std::cout << "Dog assignment operator called" << std::endl;
-    if (this != &dog) {
+    if (this != &dog) 
+    {
         delete this->brain;  // delete the old Brain
         this->brain = new Brain(*dog.getBrain());  // create a new Brain
-    }   
+    }
     this->type = dog.getType();
     return *this;
 }

@@ -24,11 +24,12 @@ Cat::Cat(const Cat &cat) : Animal(cat)
 Cat& Cat::operator=(const Cat &cat)
 {
     std::cout << "Cat assignment operator called" << std::endl;
-    if (this != &cat) {
+    if (this != &cat) 
+    {
         delete this->brain;  // delete the old Brain
-        this->type = cat.getType();
         this->brain = new Brain(*cat.getBrain());  // create a new Brain
     }
+    this->type = cat.getType();
     return *this;
 }
 
