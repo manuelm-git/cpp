@@ -17,8 +17,10 @@ public:
 
 Animal::Animal(/* args */)
 {
+    std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::~Animal()
 {
+    std::cout << "Animal destructor called" << std::endl;
 }
