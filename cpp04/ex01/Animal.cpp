@@ -24,3 +24,8 @@ Animal& Animal::operator=(const Animal &animal)
     this->type = animal.type;
     return *this;
 }
+
+void Animal::Address() const
+{
+    std::cout << "Address: " << this << std::endl;
+}

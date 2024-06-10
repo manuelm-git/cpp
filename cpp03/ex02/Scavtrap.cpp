@@ -4,17 +4,18 @@ Scavtrap::Scavtrap(/* args */)
 {
     std::cout << "Scavtrap default constructor called" << std::endl;
     this->name = "default";
-    this->hitpoints = 10;
-    this->energy_points = 10;
-    this->attack_damage = 0;
+    this->hitpoints = 100;
+    this->energy_points = 50;
+    this->attack_damage = 20;
 }
-Scavtrap::Scavtrap(std::string name) : Claptrap(name)
+Scavtrap::Scavtrap(std::string name)
 {
     std::cout << "Scavtrap " << this->name << " constructor called" << std::endl;
     this->hitpoints = 100;
     this->energy_points = 50;
     this->attack_damage = 20;
     this->guardmode = 0;
+    this->name = name;
 }
 Scavtrap::~Scavtrap()
 {

@@ -4,16 +4,17 @@ Fragtrap::Fragtrap(/* args */)
 {
     std::cout << "Fragtrap default constructor called" << std::endl;
     this->name = "default";
-    this->hitpoints = 10;
-    this->energy_points = 10;
-    this->attack_damage = 0;
+    this->hitpoints = 100;
+    this->energy_points = 100;
+    this->attack_damage = 30;
 }
-Fragtrap::Fragtrap(std::string name) : Claptrap(name)
+Fragtrap::Fragtrap(std::string name)
 {
     std::cout << "Fragtrap " << this->name << " constructor called" << std::endl;
     this->hitpoints = 100;
     this->energy_points = 100;
     this->attack_damage = 30;
+    this->name = name;
 }
 Fragtrap::~Fragtrap()
 {

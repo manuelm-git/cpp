@@ -3,14 +3,12 @@
 #include <string>
 #include "Animal.hpp"
 
-class Dog : public Animal
+class WrongCat : public Animal
 {
 private:
     /* data */
 public:
-    Dog(/* args */);
-    ~Dog();
+    WrongCat(/* args */);
+    ~WrongCat();
     void makeSound() const;
 };
-
-
