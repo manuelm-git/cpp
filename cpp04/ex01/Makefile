@@ -1,9 +1,9 @@
-NAME = Idon	twanttosettheworldonfire
-SRC = main Animal Dog Cat WrongAnimal WrongCat WrongDog
+NAME = Idontwanttosettheworldonfire
+SRC = main Brain Animal Dog Cat WrongAnimal WrongCat WrongDog 
 
 CC = c++ -std=c++98
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra 
 
 OBJS = $(SRC:=.o)
 

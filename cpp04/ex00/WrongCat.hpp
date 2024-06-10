@@ -10,5 +10,8 @@ private:
 public:
     WrongCat(/* args */);
     ~WrongCat();
+    WrongCat(const WrongCat &wrongCat);
+
     void makeSound() const;
+    WrongCat &operator=(const WrongCat &wrongCat);
 };

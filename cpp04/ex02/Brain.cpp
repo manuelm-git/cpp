@@ -3,7 +3,6 @@
 Brain::Brain(/* args */)
 {
     std::cout << "Brain constructor called" << std::endl;
-    this->setIdea("");
 }
 
 Brain::~Brain()
@@ -17,11 +16,12 @@ Brain::Brain(const Brain &brain)
 }
 void Brain::setIdea(std::string idea)
 {
-    if(idea.empty())
-        idea = "I have no idea.";
     for(int i = 0; i < 100; i++)
-    {   
-        ideas[i] = idea;
+    {
+        if(idea.empty())
+            this->ideas[i] = "I have no idea.";
+        else
+            this->ideas[i] = "I had " + idea + " in my mind.";
     }
 }
 
@@ -32,10 +32,9 @@ const std::string *Brain::getIdea() const
 
 Brain& Brain::operator=(const Brain &brain)
 {
-    if(this != &brain)
+    for(int i = 0; i < 100; i++)
     {
-        for(int i = 0; i < 100; i++)
-            this->ideas[i] = brain.ideas[i];
+        this->ideas[i] = brain.ideas[i];
     }
     return *this;
 }

@@ -1,3 +1,6 @@
+#ifndef CAT_HPP
+#define CAT_HPP
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -9,7 +12,12 @@ private:
     Brain *brain;
 public:
     Cat(/* args */);
+    Cat(const Cat &Cat);
     ~Cat();
     void makeSound() const;
     Brain *getBrain() const;
+    Cat& operator=(const Cat &Cat);
+
 };
+
+#endif

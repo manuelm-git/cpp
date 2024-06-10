@@ -13,6 +13,12 @@ Animal::Animal(/* args */)
     std::cout << "Animal constructor called" << std::endl;
     this->type = "Animal";
 }
+Animal::Animal(const Animal &animal)
+{
+    std::cout << "Animal copy constructor called" << std::endl;
+    *this = animal;
+}
+
 
 Animal::~Animal()
 {

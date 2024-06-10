@@ -9,6 +9,10 @@ private:
     /* data */
 public:
     Cat(/* args */);
+    Cat(const Cat &cat);
     ~Cat();
+    
     void makeSound() const;
+    Cat &operator=(const Cat &cat);
+
 };

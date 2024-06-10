@@ -1,23 +1,23 @@
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
+
 #pragma once
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
 #include "Brain.hpp"
-class Dog : public Animal
+class Cat : public Animal
 {
 private:
     Brain *brain;
 public:
-    Dog(/* args */);
-    Dog(const Dog &dog);
-    ~Dog();
+    Cat(/* args */);
+    ~Cat();
+    Cat(const Cat &Cat);
     void makeSound() const;
     Brain *getBrain() const;
-    Dog &operator=(const Dog &dog);
+    Cat& operator=(const Cat &Cat);
 
 };
-
 
 #endif

@@ -9,7 +9,10 @@ private:
     /* data */
 public:
     Dog(/* args */);
+    Dog(const Dog &dog);
     ~Dog();
+
+    Dog &operator=(const Dog &dog);
     void makeSound() const;
 };
 

@@ -1,11 +1,8 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Brain.hpp"
 #include "WrongCat.hpp"
-#include "Animal.hpp"
 #include "WrongAnimal.hpp"
 
 #define SIZE_GROUP 6
@@ -47,7 +44,7 @@ int main()
     std::cout << "--------->JAKE:" << std::endl ;
     ideas = jake.getBrain()->getIdea();
     for(int i = 0; i < 3; i++)
-        std::cout << "Jake`s idea: " << idea[i] << std::endl;
+        std::cout << "Jake`s idea: " << ideas[i] << std::endl;
 
     std::cout << "----------------DEEPCOPIES--BRAIN------------" << std::endl ;
     Cat originalCat;
