@@ -1,53 +1,78 @@
 #include "ScalarConverter.hpp"
 #include <iostream>
 
-void testConversion(const std::string &value) {
-    std::cout << "Testing value: " << value << std::endl;
-    ScalarConverter::convert(value);
-    std::cout << std::endl;
-}
-
 int main() {
-    // Test char literals
-	testConversion("4.0.0");
-    testConversion("a");
-    testConversion("z");
-    testConversion("0");
-    testConversion("9");
+    // Char literals
+    ScalarConverter::convert("c");
+    std::cout << std::endl;
+    ScalarConverter::convert("a");
+    std::cout << std::endl;
+    ScalarConverter::convert("}");
+    std::cout << std::endl;
 
-    // Test int literals
-    testConversion("0");
-    testConversion("-42");
-    testConversion("42");
-    testConversion("2147483647"); // INT_MAX
-    testConversion("-2147483648"); // INT_MIN
+    // Int literals
+    ScalarConverter::convert("0");
+    std::cout << std::endl;
+    ScalarConverter::convert("-42");
+    std::cout << std::endl;
+    ScalarConverter::convert("42");
+    std::cout << std::endl;
+    ScalarConverter::convert("127");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483647");
+    std::cout << std::endl;
+    ScalarConverter::convert("+2147483647");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483648");
+    std::cout << std::endl;
+    ScalarConverter::convert("-2147483648");
+    std::cout << std::endl;
+    ScalarConverter::convert("-2147483649");
+    std::cout << std::endl;
 
-    // Test float literals
-    testConversion("0.0f");
-    testConversion("-4.2f");
-    testConversion("4.2f");
-    testConversion("3.4028235e+38f"); // FLT_MAX
-    testConversion("1.17549435e-38f"); // FLT_MIN
+    // Float literals
+    ScalarConverter::convert("0.0f");
+    std::cout << std::endl;
+    ScalarConverter::convert("-4.2f");
+    std::cout << std::endl;
+    ScalarConverter::convert("4.2f");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483647.4f");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483647.0f");
+    std::cout << std::endl;
+    ScalarConverter::convert("+2147483647.0f");
+    std::cout << std::endl;
+    ScalarConverter::convert("-inff");
+    std::cout << std::endl;
+    ScalarConverter::convert("+inff");
+    std::cout << std::endl;
+    ScalarConverter::convert("nanf");
+    std::cout << std::endl;
 
-    // Test double literals
-    testConversion("0.0");
-    testConversion("-4.2");
-    testConversion("4.2");
-    testConversion("1.7976931348623157e+308"); // DBL_MAX
-    testConversion("2.2250738585072014e-308"); // DBL_MIN
+    // Double literals
+    ScalarConverter::convert("0.0");
+    std::cout << std::endl;
+    ScalarConverter::convert("-4.2");
+    std::cout << std::endl;
+    ScalarConverter::convert("4.2");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483647.4");
+    std::cout << std::endl;
+    ScalarConverter::convert("2147483647.0");
+    std::cout << std::endl;
+    ScalarConverter::convert("+2147483647.0");
+    std::cout << std::endl;
+    ScalarConverter::convert("-inf");
+    std::cout << std::endl;
+    ScalarConverter::convert("+inf");
+    std::cout << std::endl;
+    ScalarConverter::convert("nan");
+    std::cout << std::endl;
 
-    // Test pseudo literals
-    testConversion("nan");
-    testConversion("nanf");
-    testConversion("+inf");
-    testConversion("-inf");
-    testConversion("+inff");
-    testConversion("-inff");
-
-    // Test edge cases
-    testConversion("9223372036854775807"); // LLONG_MAX
-    testConversion("-9223372036854775808"); // LLONG_MIN
-    testConversion("4.2dd"); // Invalid input
+    // Invalid input
+    ScalarConverter::convert("\n");
+    std::cout << std::endl;
 
     return 0;
 }
