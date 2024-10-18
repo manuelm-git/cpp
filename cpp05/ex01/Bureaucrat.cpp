@@ -67,7 +67,7 @@ void Bureaucrat::SignForm(Form &form)
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << "Name: " << bureaucrat.GetName() << '\n' << "Grade: " << bureaucrat.Getgrade();
+	output << "Name: " << bureaucrat.GetName() << '\n' << "Grade: " << bureaucrat.Getgrade() << std::endl;
 
 	return output;
 }

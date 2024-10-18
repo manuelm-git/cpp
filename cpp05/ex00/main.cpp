@@ -1,48 +1,38 @@
-
-#include <iostream>
-#include <string>
+// main.cpp
 #include "Bureaucrat.hpp"
 
-int main()
-{
-	Bureaucrat Miguel;
-	std::cout << Miguel << std::endl;
-	// std::cout << "Name: " << Miguel.GetName() << '\n' << "Grade: " << Miguel.Getgrade();
-	
-	std::cout << "\n\n========Testing========\n\n" << std::endl;
-	try
-	{
-		Bureaucrat Gah("Gah",3000);
-		std::cout << Gah << std::endl;
-	}
-	catch(const std::exception& e)
-	{	
-		std::cout << "\nCannot create Gah\n" << std::endl;
-		std::cout << "Reason: " << e.what() << '\n';
-	}
-	std::cout << "\n\n========TestingNegative========\n\n" << std::endl;
-	try
-	{
-		Bureaucrat Biz("Biz",-2);
-		std::cout << Biz << std::endl;
-	}
-	catch(const std::exception& e)
-	{	
-		std::cout << "\nCannot create Biz\n" << std::endl;
-		std::cout << "Reason: " << e.what() << '\n';
-	}
-	std::cout << "\n\n========TestingLimits========\n\n" << std::endl;
+int main() {
+    try {
+        Bureaucrat bob("Bob", 2);
+        std::cout << bob << std::endl;
+        bob.IncrementGrade();
+        std::cout << bob << std::endl;
+        bob.IncrementGrade(); // This should throw an exception
+    } catch (const std::exception &e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
 
-	try
-	{
-		Miguel.DecrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << "Cannot decrement grade\n" << std::endl;
-		std::cout << "Reason: " << e.what() << '\n';
-	}
-	std::cout << Miguel << std::endl;
-	std::cout << "\n\n=======================\n\n" << std::endl;
-	return(0);
+    try {
+        Bureaucrat invalidLow("InvalidLow", 151); // This should throw an exception
+    } catch (const std::exception &e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat invalidHigh("InvalidHigh", 0); // This should throw an exception
+    } catch (const std::exception &e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat alice("Alice", 149);
+        std::cout << alice << std::endl;
+        alice.DecrementGrade();
+        std::cout << alice << std::endl;
+        alice.DecrementGrade(); // This should throw an exception
+    } catch (const std::exception &e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

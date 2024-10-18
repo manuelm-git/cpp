@@ -8,7 +8,7 @@ int main()
     AForm *form1 = NULL;
     AForm *form2 = NULL;
     AForm *form3 = NULL;
-
+    AForm *form4 = NULL;
     try
     {
         srand(time(0));
@@ -18,7 +18,7 @@ int main()
         form1 = intern.Makeform("robotomy request", "Bender");
         form2 = intern.Makeform("shrubbery creation", "Christmas");
         form3 = intern.Makeform("presidential pardon", "Fry");
-
+		form4 = intern.Makeform("erro","Cenoura");
         if (form1)
         {
             std::cout << *form1 << std::endl;
@@ -41,6 +41,13 @@ int main()
             form3->beSigned(bureaucrat);
             std::cout << *form3 << std::endl;
             form3->execute(bureaucrat);
+        }
+		if (form4)
+        {
+            std::cout << *form4 << std::endl;
+            form4->beSigned(bureaucrat);
+            std::cout << *form4 << std::endl;
+            form4->execute(bureaucrat);
         }
     }
     catch (Bureaucrat::GradeTooHighException &exception)

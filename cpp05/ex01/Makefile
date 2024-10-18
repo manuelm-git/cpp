@@ -1,5 +1,5 @@
 NAME = Formupmaggots!
-SRC = main Bureaucrat AForm
+SRC = main Bureaucrat Form
 
 CC = c++ -std=c++98
 RM = rm -f
