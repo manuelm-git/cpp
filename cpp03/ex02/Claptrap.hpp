@@ -1,5 +1,7 @@
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 #pragma once
-#include <string.h>
+#include <string>
 #include <iostream>
 
 class Claptrap
@@ -19,4 +21,4 @@ public:
     void beRepaired(unsigned int amount);
 };
 
-
+#endif 
