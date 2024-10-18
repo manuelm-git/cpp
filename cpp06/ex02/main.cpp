@@ -6,10 +6,8 @@
 #include <cstdlib>
 #include <ctime>
 
-class Dummy {};
-
-int main() {
-    srand(static_cast<unsigned int>(time(0)));
+int main() 
+{
 
     // Test generate and identify(Base*)
     Base *p1 = generate();
@@ -33,21 +31,6 @@ int main() {
     identify(a);
     identify(b);
     identify(c);
-
-    // Test cases where dynamic_cast should fail
-    Base *invalidBasePtr = NULL;
-    try {
-        identify(invalidBasePtr);
-    } catch (const std::exception &e) {
-        std::cerr << "Caught exception: " << e.what() << std::endl;
-    }
-
-    try {
-        Base &invalidBaseRef = *invalidBasePtr;
-        identify(invalidBaseRef);
-    } catch (const std::exception &e) {
-        std::cerr << "Caught exception: " << e.what() << std::endl;
-    }
 
     return 0;
 }

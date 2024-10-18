@@ -9,7 +9,7 @@ Base::~Base()
 
 Base *generate(void)
 {
-    int num = rand() % 3 ;
+    int num = std::rand() % 3 + 1;
     if(num == 1)
         return(new A());
     else if(num == 2)
@@ -39,28 +39,22 @@ void identify(Base& p)
         std::cout << "Base &p points: A" << std::endl;
         (void)a;     
 	} 
-	catch (const std::bad_cast &e) 
-	{
-		std::cout << "Base &p doesn't point anywhere" << std::endl;
-    }
+	catch (const std::exception &e) 
+	{}
 	try 
 	{
 		B &b = dynamic_cast<B &>(p);
 		std::cout << "Base &p points: B" << std::endl;
 		(void)b; 
 	} 
-	catch (const std::bad_cast &e)
-	{
-		std::cout << "Base &p doesn't point anywhere" << std::endl;
-	}
+	catch (const std::exception &e)
+	{}
 	try 
 	{
 		C &c = dynamic_cast<C &>(p);
 		std::cout << "Base &p points: C" << std::endl;
 		(void)c; 
 	} 
-	catch (const std::bad_cast &e) 
-	{
-		std::cout << "Base &p doesn't point anywhere" << std::endl;
-	}
+	catch (const std::exception &e) 
+	{}
 }

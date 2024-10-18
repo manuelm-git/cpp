@@ -1,3 +1,5 @@
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 #include <iostream>
 #include <stdint.h>
 typedef struct Data
@@ -8,8 +10,8 @@ typedef struct Data
 class Serializer
 {
 	private:
-		Serializer(const Serializer &serializer);
 		Serializer(/* args */);
+		Serializer(const Serializer &serializer);
 		Serializer &operator=(const Serializer &other);
 		~Serializer();
 	public:
@@ -17,3 +19,4 @@ class Serializer
 		static Data* deserialize(uintptr_t raw);
 };
 
+#endif

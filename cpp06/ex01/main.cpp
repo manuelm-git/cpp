@@ -11,9 +11,11 @@ int main()
 	std::cout << "Data2 value:" << storage.data2 << std::endl;
 
 	uintptr_t intpointer = Serializer::serialize(&storage);
-	Data *storageptr = Serializer::deserialize(intpointer);
-
 	std::cout << "\n\nSerialized...\n\n";
+
+	Data *storageptr = Serializer::deserialize(intpointer);
+	std::cout << "\n\nDeserialized...\n\n";
+
 	std::cout << "Data1 value:" << storage.data1 << "\nData1 members:" << &storageptr->data1 << std::endl;
 	std::cout << "\n\nData2 value:" << storage.data2 << "\nData2 members:" << &storageptr->data2 << std::endl;
 	if (storageptr == &storage) {

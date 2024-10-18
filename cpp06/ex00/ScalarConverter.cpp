@@ -37,7 +37,11 @@ ScalarConverter::~ScalarConverter()
 void ScalarConverter::convertchar(const std::string &value) 
 {
     char c = value[0];
-    std::cout << "char: " << c << std::endl;
+    if (std::isprint(static_cast<unsigned char>(c))) {
+        std::cout << "char: " << c << std::endl;
+    } else {
+        std::cout << "char: Non displayable" << std::endl;
+    }
     std::cout << "int: " << static_cast<int>(c) << std::endl;
     std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
     std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
@@ -55,15 +59,16 @@ void ScalarConverter::convertint(const std::string &value)
         std::cout << "double: Impossible" << std::endl;
         return;
     }
-    if (std::isprint(static_cast<unsigned char>(i)))
+    if (std::isprint(static_cast<unsigned char>(i))) 
+	{
         std::cout << "char: " << static_cast<char>(i) << std::endl;
-    else
-        std::cout << "char: Impossible" << std::endl;
+    } 
+	else 
+	{
+        std::cout << "char: Non displayable" << std::endl;
+    }
     std::cout << "int: " << static_cast<int>(i) << std::endl;
-    if (i >= std::numeric_limits<float>::min() && i <= std::numeric_limits<float>::max())
-        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
-    else
-        std::cout << "float: Impossible" << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
     std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
 }
 
