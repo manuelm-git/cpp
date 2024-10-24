@@ -5,6 +5,12 @@ int main()
     // Test default constructor
     Array<int> defaultArray;
     std::cout << "Default array size: " << defaultArray.size() << std::endl;
+    std::cout << "Default array: ";
+    for (unsigned int i = 0; i < defaultArray.size(); ++i)
+	{
+        std::cout << defaultArray[i] << " ";
+    }
+    std::cout << std::endl;
 
     // Test parameterized constructor
     Array<int> intArray(5);
@@ -36,7 +42,16 @@ int main()
 	{
         std::cout << assignedArray[i] << " ";
     }
-    std::cout << std::endl;
+	std::cout << std::endl;
+	try
+	{
+    	std::cout << assignedArray[90] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 
     return 0;
 }

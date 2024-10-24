@@ -26,11 +26,13 @@ template <typename T>
 Array<T> &Array<T>::operator=(const Array<T> &other) 
 {
 	if(this != &other)
+	{
 		delete[] arrayof;
-	n = other.n;
-	arrayof = new T[n];
-	for(unsigned int i = 0; i < n; ++i)
+		n = other.n;
+		arrayof = new T[other.n];
+		for(unsigned int i = 0; i < n; ++i)
 		arrayof[i] = other.arrayof[i];
+	}
 	return *this;
 }
 
