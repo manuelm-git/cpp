@@ -33,7 +33,7 @@ int main() {
     // Float literals
     ScalarConverter::convert("0.0f");
     std::cout << std::endl;
-    ScalarConverter::convert("-4.2f");
+    ScalarConverter::convert("42.0f");
     std::cout << std::endl;
     ScalarConverter::convert("4.2f");
     std::cout << std::endl;
