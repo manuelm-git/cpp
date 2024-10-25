@@ -1,57 +1,53 @@
+#include <iostream>
 #include "Array.hpp"
-
-int main()
+#include <stdlib.h>
+#define MAX_VAL 750
+int main(int, char**)
 {
-    // Test default constructor
-    Array<int> defaultArray;
-    std::cout << "Default array size: " << defaultArray.size() << std::endl;
-    std::cout << "Default array: ";
-    for (unsigned int i = 0; i < defaultArray.size(); ++i)
-	{
-        std::cout << defaultArray[i] << " ";
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
     }
-    std::cout << std::endl;
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
-    // Test parameterized constructor
-    Array<int> intArray(5);
-    for (unsigned int i = 0; i < intArray.size(); ++i)
-	{
-        intArray[i] = i * 10;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
     }
-    std::cout << "Integer array: ";
-    for (unsigned int i = 0; i < intArray.size(); ++i)
-	{
-        std::cout << intArray[i] << " ";
+    try
+    {
+        numbers[-2] = 0;
     }
-    std::cout << std::endl;
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-    // Test copy constructor
-    Array<int> copiedArray(intArray);
-    std::cout << "Copied array: ";
-    for (unsigned int i = 0; i < copiedArray.size(); ++i)
-	{
-        std::cout << copiedArray[i] << " ";
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
     }
-    std::cout << std::endl;
-
-    // Test assignment operator
-    Array<int> assignedArray;
-    assignedArray = intArray;
-    std::cout << "Assigned array: ";
-    for (unsigned int i = 0; i < assignedArray.size(); ++i)
-	{
-        std::cout << assignedArray[i] << " ";
-    }
-	std::cout << std::endl;
-	try
-	{
-    	std::cout << assignedArray[90] << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-
+    delete [] mirror;//
     return 0;
 }

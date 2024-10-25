@@ -1,5 +1,5 @@
-NAME = Easyfind
-SRC = main Span
+NAME = Mutated
+SRC = main 
 
 CC = c++ -std=c++98
 RM = rm -f

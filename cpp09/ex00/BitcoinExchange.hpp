@@ -1,26 +1,24 @@
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
+#include <map>
 
 class BitcoinExchange
 {
 private:
-	std::string _date;
-	int value; 
+	std::ifstream _datacsv;
+	std::ifstream _inputfile;
 public:
-	BitcoinExchange(/* args */);
-	~BitcoinExchange();
-	std::string Getdate();
-	int Getvalue();
-	
+    std::map<std::string, float> database;
+    BitcoinExchange();
+    BitcoinExchange(std::string inputfile);
+    BitcoinExchange(const BitcoinExchange &other);
+    BitcoinExchange &operator=(const BitcoinExchange &other);
+    ~BitcoinExchange();
+	void Parse();
 };
 
-BitcoinExchange::BitcoinExchange(/* args */)
-{
-}
-
-BitcoinExchange::~BitcoinExchange()
-{
-}
-
-
+#endif
