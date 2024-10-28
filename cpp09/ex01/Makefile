@@ -1,5 +1,5 @@
-NAME = btc
-SRC = main BitcoinExchange
+NAME = RPN
+SRC = main RPN
 
 CC = c++ -std=c++98
 RM = rm -f

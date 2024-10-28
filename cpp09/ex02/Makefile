@@ -1,5 +1,5 @@
-NAME = btc
-SRC = main BitcoinExchange
+NAME = PmergeMe
+SRC = main Pmerge
 
 CC = c++ -std=c++98
 RM = rm -f
